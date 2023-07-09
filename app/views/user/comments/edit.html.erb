@@ -1,0 +1,16 @@
+<h1>Title: <%= @post.title %></h1>
+<h2>Edit Comment ID: <%= @comment.id %></h2>
+<%= form_with model: comment, url: post_comment_path(@post, @comment), data: { turbo: false } do |form| %>
+  <% if comment.errors.any? %>
+    <ul>
+      <% comment.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
