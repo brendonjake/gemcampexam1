@@ -1,12 +1,12 @@
-<h1>Post List</h1>
+<h1>Disaster Information</h1>
 
 <table>
   <thead>
   <td>title</td>
   <td>content</td>
   <td>address</td>
-  <td>category</td>
   <td>user</td>
+  <td>category</td>
   <td>comments count</td>
   <td>image</td>
   </thead>
@@ -15,7 +15,7 @@
       <td><%= post.title %></td>
       <td><%= post.content %></td>
       <td><%= post.address %></td>
-      <td><%= post.categories.pluck(:name).join(',') %></td>
+<!--      <td><%#= post.categories.pluck(:name).join(',') %></td>-->
       <td><%= post.user&.email %></td>
       <td><%= post.comments_count %></td>
       <td><%= image_tag post.image.url if post.image.present? %></td>
